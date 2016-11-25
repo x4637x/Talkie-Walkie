@@ -1,12 +1,30 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Talkie-Walkie.CSharp.Plugins", "Talkie-Walkie.CSharp.Plugins.csproj", "{340049FD-3EA0-7233-CE20-3B23CC8C6D8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Talkie-Walkie.CSharp", "Talkie-Walkie.CSharp.csproj", "{1A3ED434-4475-024A-BA72-8E2313679D04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Talkie-Walkie.CSharp.Editor", "Talkie-Walkie.CSharp.Editor.csproj", "{BC066DA9-2A27-37EB-C561-2319D6AB77B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{340049FD-3EA0-7233-CE20-3B23CC8C6D8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{340049FD-3EA0-7233-CE20-3B23CC8C6D8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{340049FD-3EA0-7233-CE20-3B23CC8C6D8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{340049FD-3EA0-7233-CE20-3B23CC8C6D8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A3ED434-4475-024A-BA72-8E2313679D04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A3ED434-4475-024A-BA72-8E2313679D04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A3ED434-4475-024A-BA72-8E2313679D04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A3ED434-4475-024A-BA72-8E2313679D04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC066DA9-2A27-37EB-C561-2319D6AB77B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC066DA9-2A27-37EB-C561-2319D6AB77B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC066DA9-2A27-37EB-C561-2319D6AB77B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC066DA9-2A27-37EB-C561-2319D6AB77B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
