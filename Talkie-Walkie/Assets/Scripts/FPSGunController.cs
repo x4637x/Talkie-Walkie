@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class FPSGunController : MonoBehaviour {
-
+    public GunSetting Gun;
     float effectRange = 200f;
     float TimeBetweenShots = 0.5f;
     int HitableMask;
@@ -12,7 +12,7 @@ public class FPSGunController : MonoBehaviour {
     private ParticleSystem MuzzleFlash;
     private AudioSource ShotAudio;
     float ShotTimer;
-    float effectsDisplayTime = 0.2f;
+    float effectsDisplayTime = 0.1f;
     Ray BulletRay;
     RaycastHit BulletHit;
     
@@ -24,18 +24,28 @@ public class FPSGunController : MonoBehaviour {
         MuzzleFlashlight = this.GetComponent<Light>();
         MuzzleFlash = this.GetComponent<ParticleSystem>();
         ShotAudio = this.GetComponent<AudioSource>();
+
+        effectRange = Gun.effectRange;
+        TimeBetweenShots = Gun.FireRate;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (ShotTimer <= 10f) { ShotTimer += Time.deltaTime; }
 
-	    if (Input.GetButtonUp("Fire1") && ShotTimer>= TimeBetweenShots && Time.timeScale !=0)
+
+
+        if (ShotTimer <= 10f) { ShotTimer += Time.deltaTime; }
+        
+	    if (Input.GetButtonUp("Fire1") && ShotTimer>= TimeBetweenShots && Time.timeScale !=0 && Gun.AmmoUsed())
         {
             FireShot();
         }
 
         if (ShotTimer>= TimeBetweenShots * effectsDisplayTime) { DisableEffects(); }
+
+        if (Input.GetButtonUp("Reload")) { Gun.ReloadClip(); }
+
+
 	}
 
     void DisableEffects()
@@ -47,7 +57,6 @@ public class FPSGunController : MonoBehaviour {
     void FireShot()
     {
         ShotTimer = 0f;
-
         ShotAudio.Play();
         MuzzleFlashlight.enabled = true;
         MuzzleFlash.Stop();
