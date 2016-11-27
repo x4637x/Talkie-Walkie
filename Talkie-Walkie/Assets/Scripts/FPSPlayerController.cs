@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class FPSPlayerController : MonoBehaviour {
     public GameObject EquipHand;
-    public Text EquipModeText;
+    public Text[] EquipModeUI;
 
     int ControlMode;
     int PickUpMask;
@@ -21,7 +21,24 @@ public class FPSPlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //Update UI here
-        EquipModeText.text = "Mode = " + ControlMode;
+        EquipModeUI[0].text = "Mode = " + ControlMode;
+
+        if (ControlMode != 0)
+        {
+            if (ControlMode == 1)
+            {
+                EquipModeUI[0].text = EquipHand.transform.GetChild(0).tag;
+                EquipModeUI[1].text = EquipHand.transform.GetChild(0).name;
+                EquipModeUI[2].enabled = true;
+                EquipModeUI[2].text = "" + EquipHand.transform.GetChild(0).GetComponentInChildren<GunSetting>().currAmmo;
+            }
+        }
+        else {
+            EquipModeUI[0].text = "Bear Hand";
+            EquipModeUI[1].text = "Fist";
+            EquipModeUI[2].enabled = false;
+        }
+
 	}
 
     void FixedUpdate()
